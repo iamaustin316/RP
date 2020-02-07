@@ -14,6 +14,10 @@ class App extends Component {
       loading: true
     })
     const res = await axios.get(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`);
+    // use fetch api
+    // const res = await fetch(`https://api.github.com/users?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`).then(function(response) {
+    //   return response.json();
+    // })
     this.setState({
       users: res.data,
       loading: false
